@@ -1,0 +1,74 @@
+/* General App Layout */
+.app {
+    display: flex; /* Horizontal layout for main sections */
+    flex-direction: row; /* Sidebar, content, and widgets side-by-side */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide any overflowing content */
+    color: #000000; /* White text for contrast */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    flex: 1; /* Sidebar takes a small proportion of the layout */
+    width: 280px; /* Fixed maximum width for sidebar */
+    height: 100%; /* Full height of the viewport */
+    color: #000000; /* White text for visibility */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content Area */
+.outlet {
+    flex: 3; /* Main content takes up the largest portion */
+    overflow-y: auto; /* Scrollable if content overflows */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between posts or sections */
+    box-sizing: border-box; /* Include padding in the dimensions */
+    color: #000000; /* White text for better readability */
+    margin-left: 5%;
+}
+
+/* Widgets Section */
+.widgets {
+    flex: 1; /* Widgets take a smaller portion */
+    max-width: 300px; /* Slightly wider for widgets */
+    height: 100%; /* Full height of the viewport */
+    color: #000000; /* Consistent white text */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    overflow-y: auto; /* Allow scrolling for extra content */
+    box-sizing: border-box; /* Include padding in dimensions */
+}
+
+/* Navbar items inside the Sidebar */
+.sidebar a {
+    text-decoration: none; /* Remove underlines */
+    color: #000000; /* Consistent text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+
+/* Customize Content Spacing */
+.outlet .post {
+    border-radius: 10px; /* Rounded corners for visual appeal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Depth effect */
+}
+
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+    .app {
+        flex-direction: column; /* Stack sections vertically */
+    }
+    .sidebar,
+    .widgets {
+        max-width: none; /* Remove max width */
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Adjust height to fit content */
+    }
+    .outlet {
+        width: 100%; /* Ensure full width */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
